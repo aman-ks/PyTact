@@ -1,8 +1,11 @@
+import matplotlib.pyplot as plt
 import math
 import numpy
 from numpy.fft import fft as fft
 from scipy.fftpack import dct
 from scipy.io import wavfile
+from scikits.audiolab import Sndfile
+import wave
 
 numCoefficients = 13
 minHz = 0
@@ -60,5 +63,53 @@ def melToFreq(mel):
     
     
 sampleRate, signal = wavfile.read("output.wav")
-output = find_mfcc(signal)
-print output    
+output1 = find_mfcc(signal)
+print output1.shape
+print output1    
+f = Sndfile('output.wav','r')
+a = wave.open('output.wav','r')
+total_frames = a.getnframes()
+data_float = f.read_frames(total_frames,dtype=numpy.float64)
+print data_float.shape
+output2 = find_mfcc(data_float)
+print output2.shape
+print output2
+
+listx1 = []
+listy1 = []
+for x in output1:
+    listx1.append(x[0])
+
+for x in output1:
+    listy1.append(x[1])
+    
+listx2 = []
+listy2 = []
+for x in output2:
+    listx2.append(x[0])
+
+for x in output2:
+    listy2.append(x[1])    
+
+win = numpy.hanning(2048) #trying to see if the hann windowing works
+
+#print win
+#print win.shape
+#print win.size
+
+plt.figure(1)
+plt.subplot(211)
+plt.xlabel('Using wavfile.read')
+plt.plot(listy1,listx1,'r')
+plt.axis([0,15,0,70])
+
+
+plt.subplot(212)
+plt.plot(listy2,listx2,'r')
+plt.xlabel('Using f.read_frames')
+plt.axis([0,15,0,-70])
+
+
+plt.show()
+
+
