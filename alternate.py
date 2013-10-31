@@ -1,5 +1,6 @@
 import math
 import numpy
+import matplotlib.pyplot as plt
 from numpy.fft import fft as fft
 from scipy.fftpack import dct
 from scipy.io import wavfile
@@ -64,8 +65,25 @@ print signal
 output = find_mfcc(signal)
 print output
 
+plt.figure(1)
+plt.subplot(211)
+plt.plot(signal)
+
+plt.subplot(212)
+plt.plot(output, 'rl')
+
+
 win = numpy.hanning(2048) #trying to see if the hann windowing works
 signal = signal*win
 print signal
 output = find_mfcc(signal)
-print output    
+print output 
+
+plt.subplot(213)
+plt.plot(signal)
+
+plt.subplot(214)
+plt.plot(output, 'rl')
+
+
+plt.show()
