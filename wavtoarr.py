@@ -21,3 +21,7 @@ print fs,nc,enc,format_wave
 #print data
 print "\n \n"
 print data_float
+
+data_after = np.fft.fft(data_float)
+
+print data_after
