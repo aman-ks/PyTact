@@ -12,11 +12,12 @@ blockSize = 2048
 def find_mfcc(signal):
     complexSpectrum = fft(signal)
     powerSpectrum = abs(complexSpectrum) ** 2
-    print melFilterBank(len(powerSpectrum))
-    print powerSpectrum
-    #filteredSpectrum = numpy.dot(powerSpectrum, melFilterBank(len(powerSpectrum)))
-    #logSpectrum = numpy.log(filteredSpectrum)
-    #dctSpectrum = dct(logSpectrum, type=2)
+    mat = melFilterBank(len(powerSpectrum))
+    print mat , mat.shape
+    print powerSpectrum , powerSpectrum.shape
+    filteredSpectrum = numpy.dot(melFilterBank(len(powerSpectrum)),powerSpectrum)
+    logSpectrum = numpy.log(filteredSpectrum)
+    dctSpectrum = dct(logSpectrum, type=2)
 
     return dctSpectrum
 
@@ -49,7 +50,7 @@ def melFilterBank(blockSize):
         filterMatrix[i][start:centre] = up
         filterMatrix[i][centre:end] = down
 
-    return filterMatrix.transpose()
+    return filterMatrix
 
 def freqToMel(freq):
     return 1127.01048 * math.log(1 + freq / 700.0)
