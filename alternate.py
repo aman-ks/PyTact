@@ -60,5 +60,12 @@ def melToFreq(mel):
     
     
 sampleRate, signal = wavfile.read("output.wav")
+print signal
+output = find_mfcc(signal)
+print output
+
+win = numpy.hanning(2048) #trying to see if the hann windowing works
+signal = signal*win
+print signal
 output = find_mfcc(signal)
 print output    
