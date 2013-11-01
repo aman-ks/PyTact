@@ -39,13 +39,13 @@ homo = {
   'Z' : 'Z', 'ZEE' : 'Z', 'SAID' : 'Z',
   'ZERO' : '0', 'ZEE ROW' : '0', 'ZEE ROE' : '0',
   'ONE' : '1','WON' : '1',
-  'TWO' : '2', '2' : 'TWO', 'TO' : '2', 'TOO' : '2',
+  'TWO' : '2', '2' : 'TWO', 'TO' : '2', 'TOO' : '2','TUBE':'2',
   'THREE' : '3','TREE' : '3',
-  'FOUR' : '4','FORE' : '4', 'FOR' : '4',
+  'FOUR' : '4','FORE' : '4', 'FOR' : '4','FULL':'4',
   'FIVE' : '5','FIE' : '5',
   'SIX' : '6','SEX' : '6',
   'SEVEN' : '7','SAVE URN' : '7', 'SAVE EARN' : '7', 'SAVE UN' : '7',
-  'EIGHT' : '8','ATE' : '8', 'HATE' : '8',
+  'EIGHT' : '8','ATE' : '8', 'HATE' : '8','ATT':'8',
   'NINE' : '9','NIGH IN' : '9' }
 #similar_alphabets = {"hey":"a","cue":"q","queue":"q"}
 
@@ -89,13 +89,21 @@ matchDict = {
                     '8' : '001011', 
                     '9' : '000110'
                   }
+
+def gpio_call(string):
+    print string,matchDict[string]
+    #return matchDict[string]
+
+
 def check_in_alpha(c):
     print "Checking if input is contained in the alphabets list"
     if c in alphabets:
         print True,"Yes ",c,"is a alphabet"
+        gpio_call(c)
         return True
     elif c in homo:
         print True,"Yes I see you meant ",homo[c],"..."
+        gpio_call(homo[c])
         return True      
     else:
         print "The string",c,"is probably a word!"
@@ -105,6 +113,7 @@ def check_in_numerals(c):
     print "Checking if input is contained in the numbers list"
     if c in numbers:
         print True,"Yes ",c," a number"
+        gpio_call(c)
         return True
     else:
         print "The string ",c," is probably a word or an alphabet!"
