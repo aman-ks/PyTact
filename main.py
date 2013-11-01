@@ -14,10 +14,10 @@ alphabets = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q'
 numbers = ['1','2','3','4','5','6','7','8','9','0']
 homo = {
    'HEY' : 'A', 'EH' : 'A',
-  'BE' : 'B', 'BEE' : 'B', 'BEA' : 'B',
-  'SEE' : 'C', 'SEA' : 'C', 'SI' : 'C',
+   'BE' : 'B', 'BEE' : 'B', 'BEA' : 'B',
+   'SEE' : 'C', 'SEA' : 'C', 'SI' : 'C',
    'DEE' : 'D',
-  
+   'EE':'E','EBAY':'E','EAT':'E' ,
    'EFF' : 'F',
    'GEE' : 'G', 'JI' : 'G',
    'ETCH' : 'H',
