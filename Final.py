@@ -371,5 +371,8 @@ if index!=-1:
         check_in_alpha(next_input)     
 elif index==-1:
     print "Input unclear!"
+    pygame.mixer.music.load("sorry.mp3")                
+    pygame.mixer.music.play()
+    time.sleep(4)
     
     
