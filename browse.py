@@ -331,7 +331,7 @@ def gpio_call(string):
     l.matchSound[binary](l)
     print string,matchDict[string]
     #return matchDict[string]
-    #give_signal_high(matchDict[string]) from the raspi file
+    #raspi.give_signal_high(matchDict[string]) from the raspi file
 
 def check_in_alpha(c):
     print "Checking if input is contained in the alphabets list"
