@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Project Mudra by aman-ks</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Project Mudra</h1>
+        <p>A Braille dicta-teacher</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/aman-ks/PyTact" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/aman-ks/PyTact/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/aman-ks/PyTact/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="pytact" class="anchor" href="#pytact"><span class="octicon octicon-link"></span></a>PyTact</h1>
+
+<p>PyTact is the github repository for the project Mudra.</p>
+
+<hr><p>Mudra is a Braille dicta-teacher, whose maximum utility is in easing and simplifying the process of Braille instruction. This is especially relevant in developing countries where visually impaired children very rarely receive the appropriate specially adapted education. For example, India has the highest number of visually impaired people, but a severe lack of qualified teachers to bring literacy to VI children. As Braille has a steep learning curve, Mudra helps to significantly reduce the time taken to familiarize oneself with the alphabet (and numerals).</p>
+
+<p>Mudra has three modes : browse mode, auto mode and exam mode. In the browse mode, Mudra prompts the user for speech input. The data is then sent as an HTTPS POST request to Google's servers. The response is then filtered and matched to an alphabet/numeral. Once identified, it says the letter/numeral and generates a binary code corresponding to that particular braille letter. This binary code is sent to the GPIO pins on Raspi which shape the tactile interface into the braille representation of that letter. In auto mode, the user is taken through the continuous sequences A-Z and 0-9.In exam mode, the user is tested on the ability to guess the correct Braille letter, giving the answer as speech input.</p>
+
+<p>Mudra is built on a Raspi.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/aman-ks">aman-ks</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48324666-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
